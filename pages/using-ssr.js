@@ -13,7 +13,8 @@ export async function getServerSideProps({ req, res }) {
   //   'Cache-Control',
   //   'public, s-maxage=10, stale-while-revalidate=59'
   // )
-
+  console.log('Hello');
+  console.log({obj: 123});
   return {
     props: {
       time: new Date().toISOString(),

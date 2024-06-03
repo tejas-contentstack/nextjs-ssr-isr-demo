@@ -16,7 +16,7 @@ export async function getServerSideProps({ req, res }) {
   console.log('Hello');
   console.log({obj: 123});
   console.warn("req");
-  console.error(req);
+  console.log(req);
   console.log(req.headers);
   console.log(req.body)
   return {

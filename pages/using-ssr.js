@@ -8,6 +8,11 @@ export default function UsingSSR({ time }) {
 }
 
 export async function getServerSideProps({ req, res }) {
+const myObject = {};
+myObject.itself = myObject;
+
+
+
   // res.setHeader("cache-control", "max-age=3600")
   // res.setHeader(
   //   'Cache-Control',
@@ -15,10 +20,11 @@ export async function getServerSideProps({ req, res }) {
   // )
   console.log('Hello');
   console.log({obj: 123});
-  console.warn("req");
+  console.log("req");
   console.log(req);
   console.log(req.headers);
-  console.log(req.body)
+  console.log(req.body);
+  console.log(myObject); // This will log the object itself, but referencing itself won't show all properties.
   return {
     props: {
       time: new Date().toISOString(),

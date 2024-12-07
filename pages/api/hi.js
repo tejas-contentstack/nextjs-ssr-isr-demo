@@ -1,4 +1,7 @@
 export default async function handler(req, res) {
+    if(process.env.BREAK == 'true'){ 
+    throw new Error('throwing an error');
+  }
   // Check the HTTP method
   if (req.method === 'GET') {
     res.status(200).json({ message: 'Hello from Next.js API!' });
